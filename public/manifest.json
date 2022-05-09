@@ -1,9 +1,9 @@
 {
-  "short_name": "Avail",
-  "name": "Avail",
+  "short_name": "when4meet",
+  "name": "when4meet",
   "icons": [
     {
-      "src": "avail.png",
+      "src": "logo.png",
       "sizes": "300x300",
       "type": "image/png"
     }
