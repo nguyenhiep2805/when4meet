@@ -1,0 +1,1 @@
+export const Panel = ({ className, children, onClick }) => <div className={"panel " + (className || "")} onClick={onClick}> {children} </div>

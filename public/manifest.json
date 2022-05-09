@@ -1,0 +1,15 @@
+{
+  "short_name": "Avail",
+  "name": "Avail",
+  "icons": [
+    {
+      "src": "avail.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

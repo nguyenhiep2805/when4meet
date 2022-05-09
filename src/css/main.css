@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+:root {
+  --bg: #151515;
+  --gray: rgb(225, 225, 225);
+  --gradient: linear-gradient(10deg, rgb(255, 225, 126) 0%, rgb(255, 236, 236) 50%, rgb(146, 237, 255) 100%);
+  --shadow: 0 0 18px 0px rgb(0 0 0 / 15%);
+  --radius: 5px;
+
+  --line: rgb(89, 89, 89);
+
+  --border-sides: inset 1.5px 0 1px -1px var(--line), inset 0 -1.5px 1px -1px var(--line);
+  --border-top: inset 0 1.5px 1px -1px var(--line);
+
+
+  --btn-bg: rgb(237, 237, 237);
+  --btn-bg-hover: rgb(225, 225, 225);
+
+
+  --small-margin: .5rem;
+}
+
+html,
+body,
+#root,
+.app {
+  display: flex;
+  flex: 1 1;
+  min-height: 100%;
+  min-width: 100%;
+  flex-direction: column;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: opacity .3s ease;
+}
+
+a[href] {
+  display: flex;
+  text-decoration: none;
+}
+
+/*** BUTTONS ***/
+
+button,
+.button {
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+  border-radius: var(--radius);
+  border: none;
+  font-size: .8rem;
+  background: var(--btn-bg);
+  transition: background .3s ease;
+  font-weight: 500;
+}
+
+button:hover,
+.button:hover {
+  background: var(--btn-bg-hover);
+  cursor: pointer;
+}
+
+button:active,
+button:active:after {
+  outline: none;
+}
+
+
+
+/*** LABELS ***/
+
+.medium {
+  font-size: 1.2rem
+}
+
+.small {
+  font-size: .8rem
+}
+
+.bold {
+  font-weight: 500
+}
+
+.subtitle {
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 100%);
+  padding-bottom: var(--small-margin);
+}
+
+
+/*** INPUTS ***/
+
+input[type=text],
+input[type=date] {
+  display: flex;
+  padding: .3rem;
+  outline: none;
+  font-size: .8rem;
+}
+
+.touch-x {
+  touch-action: pan-x !important;
+}
+
+/*** DIV ***/
+
+.flex,
+.flex-col {
+  display: flex
+}
+
+.flex-col {
+  flex-direction: column
+}
+
+.flex-fill {
+  flex: 1 1
+}
+
+.center-self {
+  margin: auto
+}
+
+.center-text {
+  text-align: center
+}
+
+
+/*** INTERACE ***/
+
+.app {
+  padding: 1rem;
+}
+
+.panel {
+  display: flex;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.create>*,
+.calendar>* {
+  min-width: 15rem
+}
+
+/*** CREATE ***/
+
+.create>*:not(:last-child) {
+  margin-bottom: 2rem
+}
+
+.create>*>* {
+  margin-bottom: var(--small-margin)
+}
+
+.create input {
+  min-width: 95%
+}
+
+/*** CALENDAR ***/
+
+
+.calendar>*:not(:last-child) {
+  margin-bottom: var(--small-margin)
+}
+
+.calendar>*:not(:last-child) {
+  margin-bottom: .8rem
+}
+
+.calendar>*>* {
+  margin-bottom: var(--small-margin)
+}
+
+.calendar input {
+  min-width: 95%
+}
+
+.calendar .link {
+  display: flex;
+  padding: .5rem;
+  font-size: .76rem;
+  background: var(--gray);
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.calendar .link .icon {
+  height: .8rem;
+  margin-left: .5rem;
+}
+
+/*** GRID ***/
+
+.grid .description>* {
+  margin-bottom: var(--small-margin);
+}
+
+.cells {
+  justify-content: center;
+  user-select: none;
+  touch-action: none;
+  margin-bottom: 1rem;
+}
+
+.cells span,
+.cells label {
+  height: 1.2rem;
+  user-select: none;
+}
+
+.cells .time {
+  width: 2.5rem;
+  align-items: flex-end;
+}
+
+.cells .time * {
+  align-items: flex-end;
+  font-size: .65rem;
+}
+
+.cells .date {
+  min-width: 2.7rem;
+}
+
+
+.cells .column span:first-child {
+  box-shadow: var(--border-top), var(--border-sides);
+}
+
+.cells .column span {
+  box-shadow: var(--border-sides);
+  cursor: pointer;
+  /* transition: background .1s ease; */
+}
+
+
+
+.scroll-buttons {
+  justify-content: space-between;
+}
+
+.scroll-buttons button {
+  width: 4rem;
+  user-select: none;
+}
+
+
+/*** TOAST ***/
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gray);
+  padding: 1rem;
+  width: 90vw;
+  max-width: 30rem;
+}
+
+.toast,
+.toast * {
+  cursor: pointer;
+}
+
+.toast .icon {
+  height: .6rem;
+  opacity: .75;
+  margin-left: .5rem;
+}
+
+.fade-in {
+  animation: fade .1s ease forwards;
+}
+
+.fade-out {
+  animation: fade .1s ease reverse;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
+}
+
+/*** ICON ***/
+
+.icon {
+  display: flex;
+  cursor: pointer;
+}
+
+.icon>img {
+  display: flex;
+  object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+
+/*** LOAD ***/
+
+.load {
+  width: 15rem;
+  height: 15rem;
+  border: .5rem var(--gray) solid;
+  border-right: .5rem transparent solid;
+  border-radius: 50%;
+  animation: spin .75s linear infinite;
+  margin: auto !important;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
