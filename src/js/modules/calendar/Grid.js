@@ -202,7 +202,7 @@ const Grid = ({ dates, counts, onSelect, editing }) => {
             <label className="small"> Di chuột vào từng ô để xem thành viên có mặt. </label>
             
             { available?.amount ? (
-              <label className="small bold"> {available?.amount} {available?.amount === 1 ? "thành viên" : "thành viên"} có mặt </label>
+              <label className="small bold"> {available?.amount} {available?.amount === 1 ? "thành viên" : "thành viên"} có mặt. Bao gồm: </label>
             ) : (
               <label className="small bold"> &nbsp; </label>
             )}
